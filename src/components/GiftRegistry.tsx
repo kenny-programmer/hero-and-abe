@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { QrCode, ChevronDown } from "lucide-react";
+=======
+
+import { useState } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
+import { QrCode, ChevronDown } from 'lucide-react';
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
 
 interface PaymentMethod {
   name: string;
@@ -15,44 +23,82 @@ const paymentMethods: Record<string, PaymentMethod[]> = {
   bdo: [
     {
       name: "BDO",
+<<<<<<< HEAD
       qrCode: "/lovable-uploads/2dae8477-0604-4d1c-90d7-fc4e3c356bb1.png",
       accountName: "HERO",
       accountNumber: "•••••••5908",
     },
+=======
+      logoUrl: "/lovable-uploads/2dae8477-0604-4d1c-90d7-fc4e3c356bb1.png",
+      qrCode: "/lovable-uploads/2dae8477-0604-4d1c-90d7-fc4e3c356bb1.png",
+      accountName: "HERO",
+      accountNumber: "•••••••5908"
+    }
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
   ],
   bpi: [
     {
       name: "BPI",
+<<<<<<< HEAD
       qrCode: "/lovable-uploads/20d3c7ff-fd26-4cb8-bdd2-88b00a7e4424.png",
       accountName: "AbeHero",
       accountNumber: "xxxxxxxxxxx159",
     },
+=======
+      logoUrl: "/lovable-uploads/20d3c7ff-fd26-4cb8-bdd2-88b00a7e4424.png",
+      qrCode: "/lovable-uploads/20d3c7ff-fd26-4cb8-bdd2-88b00a7e4424.png",
+      accountName: "AbeHero",
+      accountNumber: "xxxxxxxxxxx159"
+    }
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
   ],
   gcash: [
     {
       name: "GCash",
+<<<<<<< HEAD
       qrCode: "/lovable-uploads/1d48a335-37ce-4a06-9875-a79204715dc2.png",
       accountName: "AB****L R.",
       accountNumber: "091• ••••790",
     },
+=======
+      logoUrl: "/lovable-uploads/1d48a335-37ce-4a06-9875-a79204715dc2.png",
+      qrCode: "/lovable-uploads/1d48a335-37ce-4a06-9875-a79204715dc2.png",
+      accountName: "AB****L R.",
+      accountNumber: "091• ••••790"
+    }
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
   ],
   maya: [
     {
       name: "Maya",
+<<<<<<< HEAD
       qrCode: "/lovable-uploads/be80ab0b-ec46-4e75-9cff-16e659aa41d4.png",
       accountName: "Jerrold Goguanco",
       accountNumber: "+63 *** *** 2528",
     },
   ],
+=======
+      logoUrl: "/lovable-uploads/be80ab0b-ec46-4e75-9cff-16e659aa41d4.png",
+      qrCode: "/lovable-uploads/be80ab0b-ec46-4e75-9cff-16e659aa41d4.png",
+      accountName: "Jerrold Goguanco",
+      accountNumber: "+63 *** *** 2528"
+    }
+  ]
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
 };
 
 const GiftRegistry = () => {
   const [activeTab, setActiveTab] = useState("bdo");
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
   return (
     <div className="wedding-container">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="section-title">Gift Registry</h2>
+<<<<<<< HEAD
 
         <p className="text-wedding-text mb-8">
           We are deeply appreciative of the time and effort you'll dedicate to
@@ -81,25 +127,54 @@ const GiftRegistry = () => {
             onValueChange={setActiveTab}
             className="w-full"
           >
+=======
+        
+        <p className="text-wedding-text mb-8">
+          We are deeply appreciative of the time and effort you'll dedicate to joining us on our
+          special day. Should you wish to offer a gift, monetary contributions toward our new
+          journey together would be greatly valued as we begin building our future.
+        </p>
+        
+        <div className="flex justify-center mb-8">
+          <ChevronDown className="w-8 h-8 text-wedding-primary animate-bounce" />
+        </div>
+        
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <div className="max-w-lg mx-auto bg-wedding-secondary/50 p-6 rounded-lg mb-6">
+            <h3 className="text-2xl font-cursive text-wedding-primary mb-2">Bank Details</h3>
+            <p className="text-sm text-wedding-text mb-4">Your presence is the greatest gift. However, if you wish to help us start our new life together, you may do so via:</p>
+          </div>
+          
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
             <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6">
               <TabsTrigger value="bdo">BDO</TabsTrigger>
               <TabsTrigger value="bpi">BPI</TabsTrigger>
               <TabsTrigger value="gcash">GCash</TabsTrigger>
               <TabsTrigger value="maya">Maya</TabsTrigger>
             </TabsList>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
             {Object.entries(paymentMethods).map(([key, methods]) => (
               <TabsContent key={key} value={key} className="mt-0">
                 <div className="grid grid-cols-1 gap-6">
                   {methods.map((method, index) => (
+<<<<<<< HEAD
                     <Card
                       key={index}
                       className="overflow-hidden border-2 border-wedding-primary/10"
                     >
+=======
+                    <Card key={index} className="overflow-hidden border-2 border-wedding-primary/10">
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                       <CardContent className="p-6">
                         <div className="flex flex-col items-center">
                           {method.logoUrl && (
                             <div className="mb-4 w-24 h-24 flex items-center justify-center">
+<<<<<<< HEAD
                               <img
                                 src={method.logoUrl}
                                 alt={method.name}
@@ -128,6 +203,32 @@ const GiftRegistry = () => {
                             />
                           </div>
 
+=======
+                              <img 
+                                src={method.logoUrl} 
+                                alt={method.name} 
+                                className="max-w-full max-h-full object-contain" 
+                              />
+                            </div>
+                          )}
+                          
+                          {method.accountName && (
+                            <p className="font-medium text-lg mb-1">{method.accountName}</p>
+                          )}
+                          
+                          {method.accountNumber && (
+                            <p className="text-muted-foreground mb-4">{method.accountNumber}</p>
+                          )}
+                          
+                          <div className="p-4 bg-white rounded-lg border-2 border-wedding-primary/30 w-full max-w-[240px] mx-auto">
+                            <img 
+                              src={method.qrCode} 
+                              alt={`${method.name} QR Code`} 
+                              className="w-full h-auto" 
+                            />
+                          </div>
+                          
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                           <p className="mt-4 text-sm text-muted-foreground">
                             Scan to transfer
                           </p>
@@ -140,6 +241,37 @@ const GiftRegistry = () => {
             ))}
           </Tabs>
         </div>
+<<<<<<< HEAD
+=======
+        
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h3 className="text-2xl font-cursive text-wedding-primary mb-6">Registry Items</h3>
+          
+          <p className="text-wedding-text">
+            For those who prefer to give physical gifts, we've set up a registry at the following stores:
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <Card className="border-2 border-wedding-primary/10 hover:border-wedding-primary/30 transition-all">
+              <CardContent className="p-6 flex flex-col items-center">
+                <h4 className="font-medium text-lg mb-4">Home Essentials</h4>
+                <a href="#" className="text-wedding-primary hover:underline">
+                  View Our Registry →
+                </a>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-2 border-wedding-primary/10 hover:border-wedding-primary/30 transition-all">
+              <CardContent className="p-6 flex flex-col items-center">
+                <h4 className="font-medium text-lg mb-4">Honeymoon Fund</h4>
+                <a href="#" className="text-wedding-primary hover:underline">
+                  Contribute →
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       </div>
     </div>
   );

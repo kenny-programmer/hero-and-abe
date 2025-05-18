@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+
+import { useState } from 'react';
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+<<<<<<< HEAD
 import {
   Dialog,
   DialogContent,
@@ -12,25 +18,43 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { X, Plus } from "lucide-react";
+=======
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { toast } from 'sonner';
+import { X, Plus } from 'lucide-react';
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
 
 interface Guest {
   id: string;
   name: string;
   email: string;
   phone: string;
+<<<<<<< HEAD
   attending: "yes" | "no" | "maybe";
+=======
+  attending: 'yes' | 'no' | 'maybe';
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
   mealPreference: string;
   specialRequirements: string;
 }
 
 const emptyGuest = (): Guest => ({
   id: crypto.randomUUID(),
+<<<<<<< HEAD
   name: "",
   email: "",
   phone: "",
   attending: "yes",
   mealPreference: "",
   specialRequirements: "",
+=======
+  name: '',
+  email: '',
+  phone: '',
+  attending: 'yes',
+  mealPreference: '',
+  specialRequirements: ''
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
 });
 
 const RSVPForm = () => {
@@ -39,6 +63,7 @@ const RSVPForm = () => {
   const [multiGuests, setMultiGuests] = useState<Guest[]>([emptyGuest()]);
   const [openDialog, setOpenDialog] = useState(false);
 
+<<<<<<< HEAD
   const handleSingleGuestChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -57,6 +82,20 @@ const RSVPForm = () => {
   ) => {
     setMultiGuests((prev) =>
       prev.map((guest) =>
+=======
+  const handleSingleGuestChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setSingleGuest(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSingleGuestRadioChange = (value: 'yes' | 'no' | 'maybe') => {
+    setSingleGuest(prev => ({ ...prev, attending: value }));
+  };
+
+  const handleMultiGuestChange = (id: string, field: keyof Guest, value: string) => {
+    setMultiGuests(prev => 
+      prev.map(guest => 
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
         guest.id === id ? { ...guest, [field]: value } : guest
       )
     );
@@ -64,22 +103,35 @@ const RSVPForm = () => {
 
   const handleAddGuest = () => {
     if (multiGuests.length < 3) {
+<<<<<<< HEAD
       setMultiGuests((prev) => [...prev, emptyGuest()]);
     } else {
       toast.error("Maximum of 3 guests allowed");
+=======
+      setMultiGuests(prev => [...prev, emptyGuest()]);
+    } else {
+      toast.error('Maximum of 3 guests allowed');
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
     }
   };
 
   const handleRemoveGuest = (id: string) => {
     if (multiGuests.length > 1) {
+<<<<<<< HEAD
       setMultiGuests((prev) => prev.filter((guest) => guest.id !== id));
     } else {
       toast.error("At least one guest is required");
+=======
+      setMultiGuests(prev => prev.filter(guest => guest.id !== id));
+    } else {
+      toast.error('At least one guest is required');
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
     }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+<<<<<<< HEAD
 
     const guestsToSubmit = isMultiGuest ? multiGuests : [singleGuest];
 
@@ -89,6 +141,17 @@ const RSVPForm = () => {
     toast.success("Thank you for your RSVP!");
     setOpenDialog(false);
 
+=======
+    
+    const guestsToSubmit = isMultiGuest ? multiGuests : [singleGuest];
+    
+    // Here you would typically send the data to your backend
+    console.log('Submitting RSVP for:', guestsToSubmit);
+    
+    toast.success('Thank you for your RSVP!');
+    setOpenDialog(false);
+    
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
     // Reset form
     setSingleGuest(emptyGuest());
     setMultiGuests([emptyGuest()]);
@@ -97,6 +160,7 @@ const RSVPForm = () => {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="text-center mb-8">
+<<<<<<< HEAD
         <h2 className="text-3xl font-bold text-wedding-primary mb-4">
           Event Attendance Confirmation
         </h2>
@@ -115,6 +179,16 @@ const RSVPForm = () => {
         >
           <DialogTrigger asChild>
             <Button
+=======
+        <h2 className="text-3xl font-bold text-wedding-primary mb-4">Event Attendance Confirmation</h2>
+        <p className="text-wedding-text">The countdown has begun! Confirm by Monday, 7 July 2025, 12:00</p>
+      </div>
+
+      <div className="flex justify-center space-x-6">
+        <Dialog open={openDialog && !isMultiGuest} onOpenChange={(open) => { if (open) setIsMultiGuest(false); setOpenDialog(open); }}>
+          <DialogTrigger asChild>
+            <Button 
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
               className="bg-wedding-primary hover:bg-wedding-accent text-white"
               onClick={() => setIsMultiGuest(false)}
             >
@@ -128,6 +202,7 @@ const RSVPForm = () => {
             <form onSubmit={handleSubmit} className="space-y-4 mt-4">
               <div>
                 <Label htmlFor="name">Full Name</Label>
+<<<<<<< HEAD
                 <Input
                   id="name"
                   name="name"
@@ -167,6 +242,45 @@ const RSVPForm = () => {
                   onValueChange={
                     handleSingleGuestRadioChange as (value: string) => void
                   }
+=======
+                <Input 
+                  id="name" 
+                  name="name" 
+                  value={singleGuest.name} 
+                  onChange={handleSingleGuestChange} 
+                  required 
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="email">Email</Label>
+                <Input 
+                  id="email" 
+                  name="email" 
+                  type="email" 
+                  value={singleGuest.email} 
+                  onChange={handleSingleGuestChange} 
+                  required 
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input 
+                  id="phone" 
+                  name="phone" 
+                  value={singleGuest.phone} 
+                  onChange={handleSingleGuestChange} 
+                  required 
+                />
+              </div>
+              
+              <div>
+                <Label>Will you attend?</Label>
+                <RadioGroup 
+                  value={singleGuest.attending} 
+                  onValueChange={handleSingleGuestRadioChange as (value: string) => void}
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                   className="flex space-x-4 mt-2"
                 >
                   <div className="flex items-center space-x-1">
@@ -183,6 +297,7 @@ const RSVPForm = () => {
                   </div>
                 </RadioGroup>
               </div>
+<<<<<<< HEAD
 
               <div>
                 <Label htmlFor="mealPreference">Meal Preference</Label>
@@ -213,12 +328,40 @@ const RSVPForm = () => {
                   type="submit"
                   className="bg-wedding-primary hover:bg-wedding-accent text-white"
                 >
+=======
+              
+              <div>
+                <Label htmlFor="mealPreference">Meal Preference</Label>
+                <Input 
+                  id="mealPreference" 
+                  name="mealPreference" 
+                  value={singleGuest.mealPreference} 
+                  onChange={handleSingleGuestChange} 
+                  placeholder="Vegetarian, Vegan, etc." 
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="specialRequirements">Special Requirements</Label>
+                <Input 
+                  id="specialRequirements" 
+                  name="specialRequirements" 
+                  value={singleGuest.specialRequirements} 
+                  onChange={handleSingleGuestChange} 
+                  placeholder="Allergies, accessibility needs, etc." 
+                />
+              </div>
+              
+              <div className="flex justify-end">
+                <Button type="submit" className="bg-wedding-primary hover:bg-wedding-accent text-white">
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                   Submit RSVP
                 </Button>
               </div>
             </form>
           </DialogContent>
         </Dialog>
+<<<<<<< HEAD
 
         <Dialog
           open={openDialog && isMultiGuest}
@@ -233,6 +376,16 @@ const RSVPForm = () => {
               onClick={() => setIsMultiGuest(true)}
             >
               Group RSVP
+=======
+        
+        <Dialog open={openDialog && isMultiGuest} onOpenChange={(open) => { if (open) setIsMultiGuest(true); setOpenDialog(open); }}>
+          <DialogTrigger asChild>
+            <Button 
+              className="bg-wedding-accent hover:bg-wedding-primary text-white"
+              onClick={() => setIsMultiGuest(true)}
+            >
+              Group RSVP (Up to 3)
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
             </Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
@@ -244,10 +397,17 @@ const RSVPForm = () => {
                 <div key={guest.id} className="p-4 border rounded-md relative">
                   <div className="absolute top-2 right-2 flex space-x-2">
                     {multiGuests.length > 1 && (
+<<<<<<< HEAD
                       <Button
                         type="button"
                         variant="ghost"
                         size="sm"
+=======
+                      <Button 
+                        type="button" 
+                        variant="ghost" 
+                        size="sm" 
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                         onClick={() => handleRemoveGuest(guest.id)}
                         className="h-8 w-8 p-0"
                       >
@@ -255,6 +415,7 @@ const RSVPForm = () => {
                       </Button>
                     )}
                   </div>
+<<<<<<< HEAD
 
                   <h3 className="font-medium mb-3">Guest {index + 1}</h3>
 
@@ -382,28 +543,118 @@ const RSVPForm = () => {
                           )
                         }
                         placeholder="Allergies, accessibility needs, etc."
+=======
+                  
+                  <h3 className="font-medium mb-3">Guest {index + 1}</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor={`name-${guest.id}`}>Full Name</Label>
+                      <Input 
+                        id={`name-${guest.id}`}
+                        value={guest.name} 
+                        onChange={(e) => handleMultiGuestChange(guest.id, 'name', e.target.value)} 
+                        required 
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor={`email-${guest.id}`}>Email</Label>
+                      <Input 
+                        id={`email-${guest.id}`}
+                        type="email" 
+                        value={guest.email} 
+                        onChange={(e) => handleMultiGuestChange(guest.id, 'email', e.target.value)} 
+                        required 
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor={`phone-${guest.id}`}>Phone Number</Label>
+                      <Input 
+                        id={`phone-${guest.id}`}
+                        value={guest.phone} 
+                        onChange={(e) => handleMultiGuestChange(guest.id, 'phone', e.target.value)} 
+                        required 
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label>Will you attend?</Label>
+                      <RadioGroup 
+                        value={guest.attending} 
+                        onValueChange={(value) => handleMultiGuestChange(guest.id, 'attending', value) as unknown as void}
+                        className="flex space-x-4 mt-2"
+                      >
+                        <div className="flex items-center space-x-1">
+                          <RadioGroupItem value="yes" id={`attending-yes-${guest.id}`} />
+                          <Label htmlFor={`attending-yes-${guest.id}`}>Yes</Label>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          <RadioGroupItem value="no" id={`attending-no-${guest.id}`} />
+                          <Label htmlFor={`attending-no-${guest.id}`}>No</Label>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          <RadioGroupItem value="maybe" id={`attending-maybe-${guest.id}`} />
+                          <Label htmlFor={`attending-maybe-${guest.id}`}>Maybe</Label>
+                        </div>
+                      </RadioGroup>
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor={`mealPreference-${guest.id}`}>Meal Preference</Label>
+                      <Input 
+                        id={`mealPreference-${guest.id}`}
+                        value={guest.mealPreference} 
+                        onChange={(e) => handleMultiGuestChange(guest.id, 'mealPreference', e.target.value)} 
+                        placeholder="Vegetarian, Vegan, etc." 
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor={`specialRequirements-${guest.id}`}>Special Requirements</Label>
+                      <Input 
+                        id={`specialRequirements-${guest.id}`}
+                        value={guest.specialRequirements} 
+                        onChange={(e) => handleMultiGuestChange(guest.id, 'specialRequirements', e.target.value)} 
+                        placeholder="Allergies, accessibility needs, etc." 
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                       />
                     </div>
                   </div>
                 </div>
               ))}
+<<<<<<< HEAD
 
               {multiGuests.length < 3 && (
                 <Button
                   type="button"
                   variant="outline"
+=======
+              
+              {multiGuests.length < 3 && (
+                <Button 
+                  type="button" 
+                  variant="outline" 
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                   onClick={handleAddGuest}
                   className="w-full border-dashed"
                 >
                   <Plus className="mr-2 h-4 w-4" /> Add Guest
                 </Button>
               )}
+<<<<<<< HEAD
 
               <div className="flex justify-end">
                 <Button
                   type="submit"
                   className="bg-wedding-primary hover:bg-wedding-accent text-white"
                 >
+=======
+              
+              <div className="flex justify-end">
+                <Button type="submit" className="bg-wedding-primary hover:bg-wedding-accent text-white">
+>>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                   Submit RSVP
                 </Button>
               </div>
