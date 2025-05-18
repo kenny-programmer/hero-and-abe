@@ -140,16 +140,7 @@ const Index = () => {
               >
                 RSVP
               </button>
-              <button
-                onClick={() => scrollToSection("faqs")}
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeSection === "faqs"
-                    ? "bg-wedding-primary text-white"
-                    : "hover:bg-wedding-primary/10"
-                }`}
-              >
-                FAQs
-              </button>
+
               <button
                 onClick={() => scrollToSection("gifts")}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
@@ -160,6 +151,25 @@ const Index = () => {
               >
                 Gifts
               </button>
+              <button
+                onClick={() => scrollToSection("faqs")}
+                className={`px-3 py-2 text-sm rounded-md transition-colors ${
+                  activeSection === "faqs"
+                    ? "bg-wedding-primary text-white"
+                    : "hover:bg-wedding-primary/10"
+                }`}
+              >
+                FAQs
+              </button>
+              <Link
+                to="/admin"
+                className={`px-3 py-2 text-sm rounded-md transition-colors $
+                    ? "bg-wedding-primary text-white"
+                    : "hover:bg-wedding-primary/10"
+                }`}
+              >
+                Admin
+              </Link>
             </div>
           </div>
         </div>
@@ -263,7 +273,7 @@ const Index = () => {
       </section>
 
       {/* Venue Section */}
-      <section id="venue" className="py-20 bg-white">
+      <section id="venue" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
           <h2 className="section-title">Venue Location</h2>
 
@@ -396,7 +406,7 @@ const Index = () => {
       <CustomSocialHashtags />
 
       {/* RSVP Section */}
-      <section id="rsvp" className="py-20 bg-white">
+      <section id="rsvp" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
           <h2 className="section-title">RSVP</h2>
           <RSVPForm />
@@ -415,24 +425,15 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gifts Section */}
+      <section id="gifts" className="py-20 bg-wedding-secondary">
+        <GiftRegistry />
+      </section>
+
       {/* FAQs Section */}
       <section id="faqs" className="py-20 bg-wedding-secondary">
         <FAQSection />
       </section>
-
-      {/* Gifts Section */}
-      <section id="gifts" className="py-20 bg-white">
-        <GiftRegistry />
-      </section>
-
-      {/* Admin Link */}
-      <div className="py-4 bg-wedding-primary text-white text-center">
-        <div className="wedding-container">
-          <Link to="/admin" className="text-white hover:underline">
-            Admin Panel
-          </Link>
-        </div>
-      </div>
 
       {/* Footer */}
       <footer className="py-8 bg-wedding-text text-white text-center">
