@@ -81,7 +81,7 @@ const GiftRegistry = () => {
             onValueChange={setActiveTab}
             className="w-full"
           >
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6">
+            <TabsList className="grid grid-cols-4 md:grid-cols-4 mb-6">
               <TabsTrigger value="bdo">BDO</TabsTrigger>
               <TabsTrigger value="bpi">BPI</TabsTrigger>
               <TabsTrigger value="gcash">GCash</TabsTrigger>
