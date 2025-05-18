@@ -18,7 +18,7 @@ interface Guest {
   name: string;
   email: string;
   phone: string;
-  attending: "yes" | "no" | "maybe";
+  attending: "yes" | "no";
   mealPreference: string;
   specialRequirements: string;
 }
@@ -46,7 +46,7 @@ const RSVPForm = () => {
     setSingleGuest((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSingleGuestRadioChange = (value: "yes" | "no" | "maybe") => {
+  const handleSingleGuestRadioChange = (value: "yes" | "no") => {
     setSingleGuest((prev) => ({ ...prev, attending: value }));
   };
 
@@ -176,10 +176,6 @@ const RSVPForm = () => {
                   <div className="flex items-center space-x-1">
                     <RadioGroupItem value="no" id="attending-no" />
                     <Label htmlFor="attending-no">No</Label>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <RadioGroupItem value="maybe" id="attending-maybe" />
-                    <Label htmlFor="attending-maybe">Maybe</Label>
                   </div>
                 </RadioGroup>
               </div>
@@ -336,15 +332,6 @@ const RSVPForm = () => {
                             id={`attending-no-${guest.id}`}
                           />
                           <Label htmlFor={`attending-no-${guest.id}`}>No</Label>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <RadioGroupItem
-                            value="maybe"
-                            id={`attending-maybe-${guest.id}`}
-                          />
-                          <Label htmlFor={`attending-maybe-${guest.id}`}>
-                            Maybe
-                          </Label>
                         </div>
                       </RadioGroup>
                     </div>
