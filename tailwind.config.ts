@@ -64,11 +64,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				wedding: {
-					primary: '#d8b4fe',
-					secondary: '#fae8ff',
-					accent: '#f9a8d4',
-					background: '#fdf2f8',
-					text: '#4b5563'
+					primary: '#d35400',      // Terracotta
+					secondary: '#fef3e2',    // Pastel Yellow background
+					accent: '#f39c12',       // Amber
+					background: '#fef3e2',   // Pastel Yellow background
+					text: '#5f4339',         // Warm brown text color
+					golden: '#f1c40f'        // Golden
 				}
 			},
 			borderRadius: {

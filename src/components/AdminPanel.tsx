@@ -51,8 +51,8 @@ const AdminPanel = () => {
   
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would verify credentials with your backend
-    if (username === 'admin' && password === 'password') {
+    // Use the requested admin password
+    if (username === 'admin' && password === 'weddingAdmin4321') {
       setIsAuthenticated(true);
       toast.success('Login successful');
     } else {
@@ -111,14 +111,14 @@ const AdminPanel = () => {
                 />
               </div>
               
-              <Button type="submit" className="w-full">Login</Button>
+              <Button type="submit" className="w-full bg-wedding-primary text-white hover:bg-wedding-accent">Login</Button>
             </form>
           </CardContent>
         </Card>
       ) : (
         <div className="space-y-6">
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold">RSVP Admin Panel</h2>
+            <h2 className="text-2xl font-bold text-wedding-primary">RSVP Admin Panel</h2>
             <Button variant="outline" onClick={handleLogout}>Logout</Button>
           </div>
           

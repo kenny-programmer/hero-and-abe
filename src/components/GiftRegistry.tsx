@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { QrCode } from 'lucide-react';
+import { QrCode, ChevronDown } from 'lucide-react';
 
 interface PaymentMethod {
   name: string;
@@ -60,11 +60,17 @@ const GiftRegistry = () => {
         <h2 className="section-title">Gift Registry</h2>
         
         <p className="text-wedding-text mb-8">
-          Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, we've included some options below.
+          We are deeply appreciative of the time and effort you'll dedicate to joining us on our
+          special day. Should you wish to offer a gift, monetary contributions toward our new
+          journey together would be greatly valued as we begin building our future.
         </p>
         
+        <div className="flex justify-center mb-8">
+          <ChevronDown className="w-8 h-8 text-wedding-primary animate-bounce" />
+        </div>
+        
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h3 className="text-2xl font-cursive text-wedding-text mb-6">Monetary Gifts</h3>
+          <h3 className="text-2xl font-cursive text-wedding-primary mb-6">Bank Details</h3>
           
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6">
@@ -108,7 +114,7 @@ const GiftRegistry = () => {
                           </div>
                           
                           <p className="mt-4 text-sm text-muted-foreground">
-                            Scan the QR code to send a gift
+                            Scan to transfer
                           </p>
                         </div>
                       </CardContent>
@@ -121,7 +127,7 @@ const GiftRegistry = () => {
         </div>
         
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-2xl font-cursive text-wedding-text mb-6">Registry Items</h3>
+          <h3 className="text-2xl font-cursive text-wedding-primary mb-6">Registry Items</h3>
           
           <p className="text-wedding-text">
             For those who prefer to give physical gifts, we've set up a registry at the following stores:

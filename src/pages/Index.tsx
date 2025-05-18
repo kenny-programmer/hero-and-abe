@@ -2,14 +2,15 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Calendar, Heart, MapPin, Users, Gift, MessageSquare } from 'lucide-react';
+import { Calendar, Heart, MapPin, Users, Gift, MessageSquare, Shirt, Dress } from 'lucide-react';
 import BackgroundSlider from '@/components/BackgroundSlider';
 import Countdown from '@/components/Countdown';
-import SocialHashtags from '@/components/SocialHashtags';
+import CustomSocialHashtags from '@/components/CustomSocialHashtags';
 import FAQSection from '@/components/FAQSection';
 import GiftRegistry from '@/components/GiftRegistry';
 import RSVPForm from '@/components/RSVPForm';
 import HeartShape from '@/components/HeartShape';
+import { Card, CardContent } from "@/components/ui/card";
 
 // Set wedding date
 const weddingDate = new Date('2025-07-25T15:00:00');
@@ -173,12 +174,12 @@ const Index = () => {
       </section>
       
       {/* Wedding Details Section */}
-      <section id="details" className="py-20 bg-white">
+      <section id="details" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
           <h2 className="section-title">Wedding Details</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <div className="text-center bg-wedding-primary/10 p-8 rounded-lg">
+            <div className="text-center bg-white p-8 rounded-lg shadow-md">
               <div className="mx-auto w-16 h-16 bg-wedding-primary rounded-full flex items-center justify-center mb-4">
                 <Calendar className="w-8 h-8 text-white" />
               </div>
@@ -195,7 +196,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="text-center bg-wedding-primary/10 p-8 rounded-lg">
+            <div className="text-center bg-white p-8 rounded-lg shadow-md">
               <div className="mx-auto w-16 h-16 bg-wedding-primary rounded-full flex items-center justify-center mb-4">
                 <Heart className="w-8 h-8 text-white" />
               </div>
@@ -227,7 +228,7 @@ const Index = () => {
       </section>
       
       {/* Venue Section */}
-      <section id="venue" className="py-20 bg-wedding-secondary">
+      <section id="venue" className="py-20 bg-white">
         <div className="wedding-container">
           <h2 className="section-title">Venue Location</h2>
           
@@ -267,26 +268,73 @@ const Index = () => {
       </section>
       
       {/* Dress Code Section */}
-      <section id="dress-code" className="py-20 bg-white">
+      <section id="dress-code" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
-          <h2 className="section-title">Dress Code</h2>
+          <h2 className="section-title">Dress Code & Colors</h2>
           
-          <HeartShape className="max-w-xs mx-auto text-wedding-primary">
-            <div className="text-white">
-              <h3 className="text-2xl font-bold mb-4 font-cursive">Formal Attire</h3>
-              <p className="mb-4">Ladies: Elegant evening gowns or cocktail dresses</p>
-              <p>Gentlemen: Suits or formal attire</p>
-              <p className="mt-4 text-sm">Colors: Pastels and earth tones</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-bold mb-6 text-center">Color Palette</h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="text-center">
+                      <div className="color-swatch terracotta"></div>
+                      <p>Terracotta</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="color-swatch amber"></div>
+                      <p>Amber</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="color-swatch golden"></div>
+                      <p>Golden</p>
+                    </div>
+                  </div>
+                  <p className="text-center mt-4 italic">We would love to see you in these shades</p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold mb-6 text-center">Dress Suggestions</h3>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-medium mb-2 flex items-center justify-center">
+                        <Dress className="w-5 h-5 mr-1" /> For Ladies
+                      </h4>
+                      <p className="text-center text-sm">Cocktail dresses, formal separates, or elegant jumpsuits in warm tones</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-medium mb-2 flex items-center justify-center">
+                        <Shirt className="w-5 h-5 mr-1" /> For Gentlemen
+                      </h4>
+                      <p className="text-center text-sm">Dress shirts in neutral or warm tones with slacks or suits</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-center mt-6 font-medium">Semi-Formal Attire</p>
+                </div>
+              </div>
+              
+              <div className="mt-8">
+                <HeartShape className="w-48 h-40 mx-auto">
+                  <div className="text-white">
+                    <h3 className="text-xl font-bold mb-2">Semi-Formal</h3>
+                    <p className="text-sm">Earth tones & warm colors</p>
+                  </div>
+                </HeartShape>
+              </div>
             </div>
-          </HeartShape>
+          </div>
         </div>
       </section>
       
       {/* Social Hashtags Section */}
-      <SocialHashtags />
+      <CustomSocialHashtags />
       
       {/* RSVP Section */}
-      <section id="rsvp" className="py-20 bg-wedding-secondary">
+      <section id="rsvp" className="py-20 bg-white">
         <div className="wedding-container">
           <h2 className="section-title">RSVP</h2>
           <RSVPForm />
@@ -300,12 +348,12 @@ const Index = () => {
       </section>
       
       {/* FAQs Section */}
-      <section id="faqs" className="py-20 bg-white">
+      <section id="faqs" className="py-20 bg-wedding-secondary">
         <FAQSection />
       </section>
       
       {/* Gifts Section */}
-      <section id="gifts" className="py-20 bg-wedding-primary/10">
+      <section id="gifts" className="py-20 bg-white">
         <GiftRegistry />
       </section>
       

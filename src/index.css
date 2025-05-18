@@ -16,24 +16,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 315 67% 85%;
-    --primary-foreground: 300 20% 25%;
+    --primary: 24 100% 41%;     /* Terracotta */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 300 20% 96%;
-    --secondary-foreground: 300 30% 30%;
+    --secondary: 37 98% 94%;    /* Light pastel yellow */
+    --secondary-foreground: 24 75% 30%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 324 77% 82%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 31 80% 52%;       /* Amber */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 300 51% 69%;
+    --ring: 24 100% 41%;        /* Terracotta */
 
     --radius: 0.5rem;
 
@@ -92,11 +92,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-wedding-secondary text-wedding-text font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-cursive;
+    @apply font-cursive text-wedding-primary;
   }
 }
 
@@ -106,7 +106,7 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-cursive font-bold text-wedding-text my-6 text-center;
+    @apply text-3xl md:text-4xl font-cursive font-bold text-wedding-primary my-6 text-center;
   }
 
   .heart-shape {
@@ -136,5 +136,21 @@
     left: 0;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
+  }
+  
+  .color-swatch {
+    @apply w-16 h-16 rounded-full mx-auto mb-2;
+  }
+  
+  .terracotta {
+    background-color: #d35400;
+  }
+  
+  .amber {
+    background-color: #f39c12;
+  }
+  
+  .golden {
+    background-color: #f1c40f;
   }
 }

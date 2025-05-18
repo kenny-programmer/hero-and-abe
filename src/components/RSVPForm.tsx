@@ -86,7 +86,7 @@ const RSVPForm = () => {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-wedding-text mb-4">Event Attendance Confirmation</h2>
+        <h2 className="text-3xl font-bold text-wedding-primary mb-4">Event Attendance Confirmation</h2>
         <p className="text-wedding-text">The countdown has begun! Confirm by Monday, 7 July 2025, 12:00</p>
       </div>
 
@@ -94,7 +94,7 @@ const RSVPForm = () => {
         <Dialog open={openDialog && !isMultiGuest} onOpenChange={(open) => { if (open) setIsMultiGuest(false); setOpenDialog(open); }}>
           <DialogTrigger asChild>
             <Button 
-              className="bg-wedding-primary hover:bg-wedding-accent text-wedding-primary-foreground"
+              className="bg-wedding-primary hover:bg-wedding-accent text-white"
               onClick={() => setIsMultiGuest(false)}
             >
               Single RSVP
@@ -184,7 +184,7 @@ const RSVPForm = () => {
               </div>
               
               <div className="flex justify-end">
-                <Button type="submit" className="bg-wedding-primary hover:bg-wedding-accent text-wedding-primary-foreground">
+                <Button type="submit" className="bg-wedding-primary hover:bg-wedding-accent text-white">
                   Submit RSVP
                 </Button>
               </div>
@@ -195,7 +195,7 @@ const RSVPForm = () => {
         <Dialog open={openDialog && isMultiGuest} onOpenChange={(open) => { if (open) setIsMultiGuest(true); setOpenDialog(open); }}>
           <DialogTrigger asChild>
             <Button 
-              className="bg-wedding-accent hover:bg-wedding-primary text-wedding-primary-foreground"
+              className="bg-wedding-accent hover:bg-wedding-primary text-white"
               onClick={() => setIsMultiGuest(true)}
             >
               Group RSVP (Up to 3)
@@ -313,7 +313,7 @@ const RSVPForm = () => {
               )}
               
               <div className="flex justify-end">
-                <Button type="submit" className="bg-wedding-primary hover:bg-wedding-accent text-wedding-primary-foreground">
+                <Button type="submit" className="bg-wedding-primary hover:bg-wedding-accent text-white">
                   Submit RSVP
                 </Button>
               </div>
