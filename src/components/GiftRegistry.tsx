@@ -70,7 +70,10 @@ const GiftRegistry = () => {
         </div>
         
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h3 className="text-2xl font-cursive text-wedding-primary mb-6">Bank Details</h3>
+          <div className="max-w-lg mx-auto bg-wedding-secondary/50 p-6 rounded-lg mb-6">
+            <h3 className="text-2xl font-cursive text-wedding-primary mb-2">Bank Details</h3>
+            <p className="text-sm text-wedding-text mb-4">Your presence is the greatest gift. However, if you wish to help us start our new life together, you may do so via:</p>
+          </div>
           
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6">
@@ -84,7 +87,7 @@ const GiftRegistry = () => {
               <TabsContent key={key} value={key} className="mt-0">
                 <div className="grid grid-cols-1 gap-6">
                   {methods.map((method, index) => (
-                    <Card key={index} className="overflow-hidden">
+                    <Card key={index} className="overflow-hidden border-2 border-wedding-primary/10">
                       <CardContent className="p-6">
                         <div className="flex flex-col items-center">
                           {method.logoUrl && (
@@ -105,7 +108,7 @@ const GiftRegistry = () => {
                             <p className="text-muted-foreground mb-4">{method.accountNumber}</p>
                           )}
                           
-                          <div className="p-4 bg-white rounded-lg border w-full max-w-[240px] mx-auto">
+                          <div className="p-4 bg-white rounded-lg border-2 border-wedding-primary/30 w-full max-w-[240px] mx-auto">
                             <img 
                               src={method.qrCode} 
                               alt={`${method.name} QR Code`} 
@@ -134,7 +137,7 @@ const GiftRegistry = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <Card>
+            <Card className="border-2 border-wedding-primary/10 hover:border-wedding-primary/30 transition-all">
               <CardContent className="p-6 flex flex-col items-center">
                 <h4 className="font-medium text-lg mb-4">Home Essentials</h4>
                 <a href="#" className="text-wedding-primary hover:underline">
@@ -143,7 +146,7 @@ const GiftRegistry = () => {
               </CardContent>
             </Card>
             
-            <Card>
+            <Card className="border-2 border-wedding-primary/10 hover:border-wedding-primary/30 transition-all">
               <CardContent className="p-6 flex flex-col items-center">
                 <h4 className="font-medium text-lg mb-4">Honeymoon Fund</h4>
                 <a href="#" className="text-wedding-primary hover:underline">

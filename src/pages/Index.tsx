@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Calendar, Heart, MapPin, Users, Gift, MessageSquare, Shirt, Dress } from 'lucide-react';
+import { Calendar, Heart, MapPin, Users, Gift, MessageSquare, Shirt, Rss } from 'lucide-react';
 import BackgroundSlider from '@/components/BackgroundSlider';
 import Countdown from '@/components/Countdown';
 import CustomSocialHashtags from '@/components/CustomSocialHashtags';
@@ -59,6 +59,11 @@ const Index = () => {
         behavior: 'smooth'
       });
     }
+  };
+
+  // Open Google Maps
+  const openGoogleMaps = () => {
+    window.open('https://maps.google.com/?q=Shercon+Resort+Eco+Adventure+Park+Mataas+Na+Kahoy+Batangas', '_blank');
   };
 
   return (
@@ -262,6 +267,16 @@ const Index = () => {
                   <li>Travel time from Alabang is 1.5 hours</li>
                 </ul>
               </div>
+              
+              <div className="mt-6 text-center">
+                <Button 
+                  onClick={openGoogleMaps}
+                  className="bg-wedding-primary hover:bg-wedding-accent text-white"
+                >
+                  <MapPin className="mr-2 h-4 w-4" />
+                  Click to Open Maps
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -300,7 +315,7 @@ const Index = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-medium mb-2 flex items-center justify-center">
-                        <Dress className="w-5 h-5 mr-1" /> For Ladies
+                        <Rss className="w-5 h-5 mr-1" /> For Ladies
                       </h4>
                       <p className="text-center text-sm">Cocktail dresses, formal separates, or elegant jumpsuits in warm tones</p>
                     </div>
@@ -337,6 +352,10 @@ const Index = () => {
       <section id="rsvp" className="py-20 bg-white">
         <div className="wedding-container">
           <h2 className="section-title">RSVP</h2>
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-medium text-wedding-text">Event Attendance Confirmation</h3>
+            <p className="text-wedding-text">The countdown has begun! Confirm by Monday, 7 July 2025, 12:00</p>
+          </div>
           <RSVPForm />
           
           <div className="mt-16 text-center">
