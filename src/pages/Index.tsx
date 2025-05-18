@@ -217,7 +217,7 @@ const Index = () => {
               <h3 className="text-2xl font-bold mb-4 font-cursive">Ceremony</h3>
               <p className="text-lg mb-2">Thursday, July 17, 2025</p>
               <p className="mb-2">3:00 PM</p>
-              <p>Shercon Resort Garden</p>
+              <p>Shercon Resort Club Manuel Garden</p>
               <div className="mt-6">
                 <img
                   src="/lovable-uploads/f24d94cd-eee6-47f6-a253-61a549ac3528.png"
@@ -236,7 +236,7 @@ const Index = () => {
               </h3>
               <p className="text-lg mb-2">Thursday, July 17, 2025</p>
               <p className="mb-2">6:00 PM</p>
-              <p>Shercon Resort Main Hall</p>
+              <p>Shercon Resort Club Manuel Main Hall</p>
               <div className="mt-6">
                 <img
                   src="/lovable-uploads/c69118d4-54db-4db0-952e-609ac201b44b.png"
