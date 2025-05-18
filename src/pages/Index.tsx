@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -23,24 +22,6 @@ import { Card, CardContent } from "@/components/ui/card";
 
 // Set wedding date
 const weddingDate = new Date("2025-07-17T15:00:00");
-=======
-
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
-import { Calendar, Heart, MapPin, Users, Gift, MessageSquare, Shirt, Rss } from 'lucide-react';
-import BackgroundSlider from '@/components/BackgroundSlider';
-import Countdown from '@/components/Countdown';
-import CustomSocialHashtags from '@/components/CustomSocialHashtags';
-import FAQSection from '@/components/FAQSection';
-import GiftRegistry from '@/components/GiftRegistry';
-import RSVPForm from '@/components/RSVPForm';
-import HeartShape from '@/components/HeartShape';
-import { Card, CardContent } from "@/components/ui/card";
-
-// Set wedding date
-const weddingDate = new Date('2025-07-25T15:00:00');
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
 
 const Index = () => {
   // Images for background slider
@@ -51,24 +32,15 @@ const Index = () => {
     "/lovable-uploads/3c3afc5b-7ebd-4dd0-8728-41bd35554a43.png",
     "/lovable-uploads/aede685c-c53c-4b4f-811e-63db5e5b4bef.png",
     "/lovable-uploads/02043bdc-3491-4b4f-addb-146cc161e5fc.png",
-<<<<<<< HEAD
     "/lovable-uploads/fb1444e0-1d9f-4bc0-82e7-c65399360227.png",
   ];
 
   // Active section for navigation
   const [activeSection, setActiveSection] = useState("hero");
-=======
-    "/lovable-uploads/fb1444e0-1d9f-4bc0-82e7-c65399360227.png"
-  ];
-
-  // Active section for navigation
-  const [activeSection, setActiveSection] = useState('hero');
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
 
   // Handle scroll to set active section
   useEffect(() => {
     const handleScroll = () => {
-<<<<<<< HEAD
       const sections = document.querySelectorAll("section[id]");
 
       sections.forEach((section) => {
@@ -80,29 +52,13 @@ const Index = () => {
           window.scrollY >= sectionTop &&
           window.scrollY < sectionTop + sectionHeight
         ) {
-=======
-      const sections = document.querySelectorAll('section[id]');
-      
-      sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop - 100;
-        const sectionHeight = (section as HTMLElement).offsetHeight;
-        const sectionId = section.getAttribute('id') || '';
-        
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
           setActiveSection(sectionId);
         }
       });
     };
-<<<<<<< HEAD
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-=======
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
   }, []);
 
   // Scroll to section
@@ -111,163 +67,95 @@ const Index = () => {
     if (section) {
       window.scrollTo({
         top: section.offsetTop - 80,
-<<<<<<< HEAD
         behavior: "smooth",
-=======
-        behavior: 'smooth'
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       });
     }
   };
 
   // Open Google Maps
   const openGoogleMaps = () => {
-<<<<<<< HEAD
     window.open(
       "https://maps.google.com/?q=Shercon+Resort+Eco+Adventure+Park+Mataas+Na+Kahoy+Batangas",
       "_blank"
     );
-=======
-    window.open('https://maps.google.com/?q=Shercon+Resort+Eco+Adventure+Park+Mataas+Na+Kahoy+Batangas', '_blank');
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
   };
 
   return (
     <div className="min-h-screen">
       {/* Background Slider */}
       <BackgroundSlider images={backgroundImages} interval={5000} />
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm py-4">
         <div className="wedding-container">
           <div className="flex justify-center">
             <div className="flex space-x-1 md:space-x-4 overflow-x-auto pb-1 px-2 whitespace-nowrap">
               <button
-<<<<<<< HEAD
                 onClick={() => scrollToSection("hero")}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
                   activeSection === "hero"
                     ? "bg-wedding-primary text-white"
                     : "hover:bg-wedding-primary/10"
-=======
-                onClick={() => scrollToSection('hero')}
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeSection === 'hero' 
-                    ? 'bg-wedding-primary text-white' 
-                    : 'hover:bg-wedding-primary/10'
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                 }`}
               >
                 Home
               </button>
               <button
-<<<<<<< HEAD
                 onClick={() => scrollToSection("details")}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
                   activeSection === "details"
                     ? "bg-wedding-primary text-white"
                     : "hover:bg-wedding-primary/10"
-=======
-                onClick={() => scrollToSection('details')}
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeSection === 'details' 
-                    ? 'bg-wedding-primary text-white' 
-                    : 'hover:bg-wedding-primary/10'
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                 }`}
               >
                 Details
               </button>
               <button
-<<<<<<< HEAD
                 onClick={() => scrollToSection("venue")}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
                   activeSection === "venue"
                     ? "bg-wedding-primary text-white"
                     : "hover:bg-wedding-primary/10"
-=======
-                onClick={() => scrollToSection('venue')}
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeSection === 'venue' 
-                    ? 'bg-wedding-primary text-white' 
-                    : 'hover:bg-wedding-primary/10'
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                 }`}
               >
                 Venue
               </button>
               <button
-<<<<<<< HEAD
                 onClick={() => scrollToSection("dress-code")}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
                   activeSection === "dress-code"
                     ? "bg-wedding-primary text-white"
                     : "hover:bg-wedding-primary/10"
-=======
-                onClick={() => scrollToSection('dress-code')}
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeSection === 'dress-code' 
-                    ? 'bg-wedding-primary text-white' 
-                    : 'hover:bg-wedding-primary/10'
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                 }`}
               >
                 Dress Code
               </button>
               <button
-<<<<<<< HEAD
                 onClick={() => scrollToSection("rsvp")}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
                   activeSection === "rsvp"
                     ? "bg-wedding-primary text-white"
                     : "hover:bg-wedding-primary/10"
-=======
-                onClick={() => scrollToSection('rsvp')}
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeSection === 'rsvp' 
-                    ? 'bg-wedding-primary text-white' 
-                    : 'hover:bg-wedding-primary/10'
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                 }`}
               >
                 RSVP
               </button>
               <button
-<<<<<<< HEAD
                 onClick={() => scrollToSection("faqs")}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
                   activeSection === "faqs"
                     ? "bg-wedding-primary text-white"
                     : "hover:bg-wedding-primary/10"
-=======
-                onClick={() => scrollToSection('faqs')}
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeSection === 'faqs' 
-                    ? 'bg-wedding-primary text-white' 
-                    : 'hover:bg-wedding-primary/10'
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                 }`}
               >
                 FAQs
               </button>
               <button
-<<<<<<< HEAD
                 onClick={() => scrollToSection("gifts")}
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
                   activeSection === "gifts"
                     ? "bg-wedding-primary text-white"
                     : "hover:bg-wedding-primary/10"
-=======
-                onClick={() => scrollToSection('gifts')}
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activeSection === 'gifts' 
-                    ? 'bg-wedding-primary text-white' 
-                    : 'hover:bg-wedding-primary/10'
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                 }`}
               >
                 Gifts
@@ -276,7 +164,6 @@ const Index = () => {
           </div>
         </div>
       </nav>
-<<<<<<< HEAD
 
       {/* Hero Section */}
       <section
@@ -310,56 +197,24 @@ const Index = () => {
               size="lg"
               className="mt-8 bg-wedding-primary hover:bg-wedding-accent text-white"
               onClick={() => scrollToSection("rsvp")}
-=======
-      
-      {/* Hero Section */}
-      <section id="hero" className="min-h-[90vh] flex items-center justify-center text-center py-20">
-        <div className="wedding-container">
-          <div className="bg-black/30 backdrop-blur-sm p-8 rounded-lg max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-white font-cursive mb-4">Abe & Hero</h1>
-            <p className="text-white text-lg md:text-xl mb-8">together with their families invite you to their wedding celebration</p>
-            <div className="mb-8">
-              <p className="text-white text-lg md:text-2xl font-medium">Friday, July 25, 2025</p>
-              <p className="text-white text-lg">3:00 PM</p>
-              <p className="text-white text-lg">Shercon Resort, Lipa City, Batangas</p>
-            </div>
-            
-            <div className="mt-12 mb-6">
-              <Countdown targetDate={weddingDate} />
-            </div>
-            
-            <Button 
-              size="lg"
-              className="mt-8 bg-wedding-primary hover:bg-wedding-accent text-white"
-              onClick={() => scrollToSection('rsvp')}
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
             >
               RSVP Now
             </Button>
           </div>
         </div>
       </section>
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       {/* Wedding Details Section */}
       <section id="details" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
           <h2 className="section-title">Wedding Details</h2>
-<<<<<<< HEAD
 
-=======
-          
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <div className="text-center bg-white p-8 rounded-lg shadow-md">
               <div className="mx-auto w-16 h-16 bg-wedding-primary rounded-full flex items-center justify-center mb-4">
                 <Calendar className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 font-cursive">Ceremony</h3>
-<<<<<<< HEAD
               <p className="text-lg mb-2">Thursday, July 17, 2025</p>
               <p className="mb-2">3:00 PM</p>
               <p>Shercon Resort Garden</p>
@@ -372,25 +227,10 @@ const Index = () => {
               </div>
             </div>
 
-=======
-              <p className="text-lg mb-2">Friday, July 25, 2025</p>
-              <p className="mb-2">3:00 PM</p>
-              <p>Shercon Resort Garden</p>
-              <div className="mt-6">
-                <img 
-                  src="/lovable-uploads/f24d94cd-eee6-47f6-a253-61a549ac3528.png" 
-                  alt="Wedding Ceremony Setup" 
-                  className="w-full h-auto rounded-lg shadow-md" 
-                />
-              </div>
-            </div>
-            
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
             <div className="text-center bg-white p-8 rounded-lg shadow-md">
               <div className="mx-auto w-16 h-16 bg-wedding-primary rounded-full flex items-center justify-center mb-4">
                 <Heart className="w-8 h-8 text-white" />
               </div>
-<<<<<<< HEAD
               <h3 className="text-2xl font-bold mb-4 font-cursive">
                 Reception
               </h3>
@@ -402,22 +242,10 @@ const Index = () => {
                   src="/lovable-uploads/c69118d4-54db-4db0-952e-609ac201b44b.png"
                   alt="Wedding Reception Venue"
                   className="w-full h-auto rounded-lg shadow-md"
-=======
-              <h3 className="text-2xl font-bold mb-4 font-cursive">Reception</h3>
-              <p className="text-lg mb-2">Friday, July 25, 2025</p>
-              <p className="mb-2">6:00 PM</p>
-              <p>Shercon Resort Main Hall</p>
-              <div className="mt-6">
-                <img 
-                  src="/lovable-uploads/c69118d4-54db-4db0-952e-609ac201b44b.png" 
-                  alt="Wedding Reception Venue" 
-                  className="w-full h-auto rounded-lg shadow-md" 
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                 />
               </div>
             </div>
           </div>
-<<<<<<< HEAD
 
           <div className="mt-16 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-6 font-cursive text-center">
@@ -428,31 +256,16 @@ const Index = () => {
                 src="/lovable-uploads/ed547f22-7444-417a-b8ae-0c833960be62.png"
                 alt="Directions to the venue"
                 className="w-full h-auto rounded-lg"
-=======
-          
-          <div className="mt-16 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-6 font-cursive text-center">Directions</h3>
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <img 
-                src="/lovable-uploads/ed547f22-7444-417a-b8ae-0c833960be62.png" 
-                alt="Directions to the venue" 
-                className="w-full h-auto rounded-lg" 
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
               />
             </div>
           </div>
         </div>
       </section>
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       {/* Venue Section */}
       <section id="venue" className="py-20 bg-white">
         <div className="wedding-container">
           <h2 className="section-title">Venue Location</h2>
-<<<<<<< HEAD
 
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <iframe
@@ -462,22 +275,10 @@ const Index = () => {
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-=======
-          
-          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.6709382184607!2d121.15518677579087!3d14.044861789693552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6e5e40d7f393%3A0xc1dc63428cf28b00!2sShercon%20Resort%20Eco%20Adventure%20Park!5e0!3m2!1sen!2sph!4v1715962128649!5m2!1sen!2sph" 
-              width="100%" 
-              height="450" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
               referrerPolicy="no-referrer-when-downgrade"
               title="Venue Location Map"
               className="w-full"
             ></iframe>
-<<<<<<< HEAD
 
             <div className="p-6">
               <h3 className="text-xl font-bold mb-2 font-cursive">
@@ -504,35 +305,13 @@ const Index = () => {
                   <li>
                     After Fernando Air Base, turn right going to MATAAS NA KAHOY
                   </li>
-=======
-            
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 font-cursive">Shercon Resort</h3>
-              <p className="flex items-center gap-2 mb-4">
-                <MapPin className="h-5 w-5 text-wedding-primary" />
-                <span>Purok 6, Barangay San Sebastian, Mataas Na Kahoy, Batangas</span>
-              </p>
-              
-              <div className="mt-4">
-                <h4 className="font-medium mb-2">From Manila via SLEX:</h4>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Drive through SOUTH LUZON EXPRESSWAY (SLEX) and take LIPA CITY TAMBO EXIT</li>
-                  <li>From the exit booth, turn left and travel along FERNANDO AIR BASE</li>
-                  <li>After Fernando Air Base, turn right going to MATAAS NA KAHOY</li>
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                   <li>Follow the signages along the way</li>
                   <li>Travel time from Alabang is 1.5 hours</li>
                 </ul>
               </div>
-<<<<<<< HEAD
 
               <div className="mt-6 text-center">
                 <Button
-=======
-              
-              <div className="mt-6 text-center">
-                <Button 
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                   onClick={openGoogleMaps}
                   className="bg-wedding-primary hover:bg-wedding-accent text-white"
                 >
@@ -544,31 +323,19 @@ const Index = () => {
           </div>
         </div>
       </section>
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       {/* Dress Code Section */}
       <section id="dress-code" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
           <h2 className="section-title">Dress Code & Colors</h2>
-<<<<<<< HEAD
 
-=======
-          
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-<<<<<<< HEAD
                   <h3 className="text-xl font-bold mb-6 text-center">
                     Color Palette
                   </h3>
-=======
-                  <h3 className="text-xl font-bold mb-6 text-center">Color Palette</h3>
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                   <div className="grid grid-cols-3 gap-4">
                     <div className="text-center">
                       <div className="color-swatch terracotta"></div>
@@ -583,7 +350,6 @@ const Index = () => {
                       <p>Golden</p>
                     </div>
                   </div>
-<<<<<<< HEAD
                   <p className="text-center mt-4 italic">
                     We would love to see you in these shades
                   </p>
@@ -594,36 +360,21 @@ const Index = () => {
                     Dress Suggestions
                   </h3>
 
-=======
-                  <p className="text-center mt-4 italic">We would love to see you in these shades</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold mb-6 text-center">Dress Suggestions</h3>
-                  
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-medium mb-2 flex items-center justify-center">
                         <Rss className="w-5 h-5 mr-1" /> For Ladies
                       </h4>
-<<<<<<< HEAD
                       <p className="text-center text-sm">
                         Cocktail dresses, formal separates, or elegant jumpsuits
                         in warm tones
                       </p>
                     </div>
 
-=======
-                      <p className="text-center text-sm">Cocktail dresses, formal separates, or elegant jumpsuits in warm tones</p>
-                    </div>
-                    
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
                     <div>
                       <h4 className="font-medium mb-2 flex items-center justify-center">
                         <Shirt className="w-5 h-5 mr-1" /> For Gentlemen
                       </h4>
-<<<<<<< HEAD
                       <p className="text-center text-sm">
                         Dress shirts in neutral or warm tones with slacks or
                         suits
@@ -636,44 +387,18 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-=======
-                      <p className="text-center text-sm">Dress shirts in neutral or warm tones with slacks or suits</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-center mt-6 font-medium">Semi-Formal Attire</p>
-                </div>
-              </div>
-              
-              <div className="mt-8">
-                <HeartShape className="w-48 h-40 mx-auto">
-                  <div className="text-white">
-                    <h3 className="text-xl font-bold mb-2">Semi-Formal</h3>
-                    <p className="text-sm">Earth tones & warm colors</p>
-                  </div>
-                </HeartShape>
-              </div>
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
             </div>
           </div>
         </div>
       </section>
-<<<<<<< HEAD
 
       {/* Social Hashtags Section */}
       <CustomSocialHashtags />
 
-=======
-      
-      {/* Social Hashtags Section */}
-      <CustomSocialHashtags />
-      
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       {/* RSVP Section */}
       <section id="rsvp" className="py-20 bg-white">
         <div className="wedding-container">
           <h2 className="section-title">RSVP</h2>
-<<<<<<< HEAD
           <RSVPForm />
 
           <div className="mt-16 text-center">
@@ -685,40 +410,20 @@ const Index = () => {
               >
                 abeandherowedding@gmail.com
               </a>
-=======
-          <div className="text-center mb-6">
-            <h3 className="text-xl font-medium text-wedding-text">Event Attendance Confirmation</h3>
-            <p className="text-wedding-text">The countdown has begun! Confirm by Monday, 7 July 2025, 12:00</p>
-          </div>
-          <RSVPForm />
-          
-          <div className="mt-16 text-center">
-            <p className="text-wedding-text">
-              For any questions regarding the RSVP, please contact us at <a href="mailto:abeandherowedding@gmail.com" className="text-wedding-primary">abeandherowedding@gmail.com</a>
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
             </p>
           </div>
         </div>
       </section>
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       {/* FAQs Section */}
       <section id="faqs" className="py-20 bg-wedding-secondary">
         <FAQSection />
       </section>
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       {/* Gifts Section */}
       <section id="gifts" className="py-20 bg-white">
         <GiftRegistry />
       </section>
-<<<<<<< HEAD
 
       {/* Admin Link */}
       <div className="py-4 bg-wedding-primary text-white text-center">
@@ -729,25 +434,11 @@ const Index = () => {
         </div>
       </div>
 
-=======
-      
-      {/* Admin Link */}
-      <div className="py-4 bg-wedding-primary text-white text-center">
-        <div className="wedding-container">
-          <Link to="/admin" className="text-white hover:underline">Admin Panel</Link>
-        </div>
-      </div>
-      
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
       {/* Footer */}
       <footer className="py-8 bg-wedding-text text-white text-center">
         <div className="wedding-container">
           <p className="mb-2">Abe & Hero's Wedding</p>
-<<<<<<< HEAD
           <p>July 17, 2025 | Shercon Resort, Batangas</p>
-=======
-          <p>July 25, 2025 | Shercon Resort, Batangas</p>
->>>>>>> b5f44c61de166965f0056cf19a2769e95abe106b
           <p className="mt-4 text-sm opacity-70">© 2025 Abe & Hero</p>
         </div>
       </footer>

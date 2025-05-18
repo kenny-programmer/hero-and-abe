@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import AdminPanel from "@/components/AdminPanel";
 import { Card, CardContent } from "@/components/ui/card";
@@ -49,12 +48,18 @@ const AdminPage = () => {
   return (
     <div className="min-h-screen bg-wedding-secondary py-10">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-cursive text-wedding-primary text-center mb-8">Wedding Admin Panel</h1>
-        
+        <h1 className="text-3xl font-cursive text-wedding-primary text-center mb-8">
+          Wedding Admin Panel
+        </h1>
+
         {isAuthenticated ? (
           <>
             <div className="flex justify-end mb-4">
-              <Button variant="outline" onClick={handleLogout} className="text-wedding-primary">
+              <Button
+                variant="outline"
+                onClick={handleLogout}
+                className="text-wedding-primary"
+              >
                 Logout
               </Button>
             </div>
@@ -78,7 +83,7 @@ const AdminPage = () => {
                     }}
                   />
                 </div>
-                <Button 
+                <Button
                   className="w-full bg-wedding-primary hover:bg-wedding-accent text-white"
                   onClick={handleLogin}
                 >
