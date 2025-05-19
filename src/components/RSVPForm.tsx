@@ -136,13 +136,14 @@ const RSVPForm = () => {
 
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent
-          className={isMultiGuest ? "sm:max-w-[600px]" : "sm:max-w-[500px]"}
+          className={
+            (isMultiGuest ? "sm:max-w-[600px]" : "sm:max-w-[500px]") +
+            " max-h-[80vh] overflow-y-auto"
+          }
         >
           <DialogHeader>
             <DialogTitle>
-              {isMultiGuest
-                ? `Group Registration (Maximum ${maxInvites} guests)`
-                : "Single Guest Registration"}
+              {isMultiGuest ? `Guest Registration` : "Guest Registration"}
             </DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-6">
