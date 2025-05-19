@@ -12,16 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { X, Plus } from "lucide-react";
-
-interface Guest {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  attending: "yes" | "no";
-  mealPreference: string;
-  specialRequirements: string;
-}
+import { Guest, submitRSVP } from "@/lib/supabase";
 
 const emptyGuest = (): Guest => ({
   id: crypto.randomUUID(),
@@ -38,6 +29,7 @@ const RSVPForm = () => {
   const [singleGuest, setSingleGuest] = useState<Guest>(emptyGuest());
   const [multiGuests, setMultiGuests] = useState<Guest[]>([emptyGuest()]);
   const [openDialog, setOpenDialog] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSingleGuestChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -78,20 +70,28 @@ const RSVPForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const guestsToSubmit = isMultiGuest ? multiGuests : [singleGuest];
+    try {
+      const guestsToSubmit = isMultiGuest ? multiGuests : [singleGuest];
 
-    // Here you would typically send the data to your backend
-    console.log("Submitting RSVP for:", guestsToSubmit);
+      // Submit to Supabase
+      await submitRSVP(guestsToSubmit);
 
-    toast.success("Thank you for your RSVP!");
-    setOpenDialog(false);
+      toast.success("Thank you for your RSVP!");
+      setOpenDialog(false);
 
-    // Reset form
-    setSingleGuest(emptyGuest());
-    setMultiGuests([emptyGuest()]);
+      // Reset form
+      setSingleGuest(emptyGuest());
+      setMultiGuests([emptyGuest()]);
+    } catch (error) {
+      console.error("RSVP submission error:", error);
+      toast.error("There was an error submitting your RSVP. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -208,8 +208,9 @@ const RSVPForm = () => {
                 <Button
                   type="submit"
                   className="bg-wedding-primary hover:bg-wedding-accent text-white"
+                  disabled={isSubmitting}
                 >
-                  Submit RSVP
+                  {isSubmitting ? "Submitting..." : "Submit RSVP"}
                 </Button>
               </div>
             </form>
@@ -390,8 +391,9 @@ const RSVPForm = () => {
                 <Button
                   type="submit"
                   className="bg-wedding-primary hover:bg-wedding-accent text-white"
+                  disabled={isSubmitting}
                 >
-                  Submit RSVP
+                  {isSubmitting ? "Submitting..." : "Submit RSVP"}
                 </Button>
               </div>
             </form>
