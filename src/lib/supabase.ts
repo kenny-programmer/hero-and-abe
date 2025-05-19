@@ -17,6 +17,21 @@ export interface Guest {
   specialRequirements: string;
 }
 
+// Check if email already exists in the database
+export async function checkEmailExists(email: string): Promise<boolean> {
+  const { data, error, count } = await supabase
+    .from('rsvp_guests')
+    .select('email', { count: 'exact' })
+    .eq('email', email);
+  
+  if (error) {
+    console.error('Error checking email existence:', error);
+    throw error;
+  }
+  
+  return count !== null && count > 0;
+}
+
 // Functions for RSVP operations
 export async function submitRSVP(guests: Guest[]) {
   const { data, error } = await supabase

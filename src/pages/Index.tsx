@@ -409,6 +409,13 @@ const Index = () => {
       <section id="rsvp" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
           <h2 className="section-title">RSVP</h2>
+          <h2 className="text-3xl font-bold text-wedding-primary mb-4 text-center">
+            Event Attendance Confirmation
+          </h2>
+          <p className="text-center text-lg mb-8">
+            The Countdown has begun! We kindly request your confirmation by June
+            4, 2025
+          </p>
           <RSVPForm />
 
           <div className="mt-16 text-center">
