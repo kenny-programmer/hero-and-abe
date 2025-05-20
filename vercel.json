@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "yourspecialinvite.com"
+        }
+      ],
+      "destination": "https://www.yourspecialinvite.com/$1",
+      "permanent": true
+    }
+  ]
+}
