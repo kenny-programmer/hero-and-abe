@@ -32,7 +32,6 @@ const RSVPForm = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Update invite type without opening dialog
   useEffect(() => {
     if (inviteType === INVITE_TYPES.GROUP) {
       setIsMultiGuest(true);
@@ -138,7 +137,7 @@ const RSVPForm = () => {
         <DialogContent
           className={
             (isMultiGuest ? "sm:max-w-[600px]" : "sm:max-w-[500px]") +
-            " max-h-[80vh] overflow-y-auto"
+            " bg-white p-8 rounded-lg shadow-xl max-h-[90vh] overflow-y-auto"
           }
         >
           <DialogHeader>

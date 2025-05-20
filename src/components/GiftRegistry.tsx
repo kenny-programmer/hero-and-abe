@@ -55,10 +55,10 @@ const GiftRegistry = () => {
         <h2 className="section-title">Gift Registry</h2>
 
         <p className="text-wedding-text mb-8">
-          We are deeply appreciative of the time and effort you'll dedicate to
-          joining us on our special day. Should you wish to offer a gift,
-          monetary contributions toward our new journey together would be
-          greatly valued as we begin building our future.
+          Your presence and joy in celebrating with us on our special day would
+          already warm our hearts. However, should you wish to honor us with a
+          present, a monetary gift to start our married life would be greatly
+          appreciated.
         </p>
 
         <div className="flex justify-center mb-8">
@@ -66,16 +66,6 @@ const GiftRegistry = () => {
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="max-w-lg mx-auto bg-wedding-secondary/50 p-6 rounded-lg mb-6">
-            <h3 className="text-2xl font-cursive text-wedding-primary mb-2">
-              Bank Details
-            </h3>
-            <p className="text-sm text-wedding-text mb-4">
-              Your presence is the greatest gift. However, if you wish to help
-              us start our new life together, you may do so via:
-            </p>
-          </div>
-
           <Tabs
             value={activeTab}
             onValueChange={setActiveTab}
