@@ -9,8 +9,8 @@ interface InviteTypeState {
 
 // Using more secure invite codes
 const INVITE_TYPES = {
-  SINGLE: 'inv_15aHx9k',  // replaces 'one-invite'
-  GROUP: 'inv_37mPq4w'    // replaces 'three-invites'
+  SINGLE: 'Hero&Abe',  // replaces 'one-invite'
+  GROUP: 'HeroAndAbe'    // replaces 'three-invites'
 } as const;
 
 export const useInviteType = (): InviteTypeState => {
