@@ -172,7 +172,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
               <h1 className="text-6xl md:text-8xl font-bold font-cursive tracking-wide">
-                <span className="text-wedding-primary block md:inline animate-fade-in">
+                <span className="text-yellow-500 block md:inline animate-fade-in">
                   Abe & Hero
                 </span>
               </h1>
@@ -183,10 +183,12 @@ const Index = () => {
               </p>
 
               <div className="space-y-4">
-                <p className="text-white text-2xl md:text-3xl font-medium">
+                <p className="text-wedding-primary text-2xl md:text-3xl font-bold">
                   Thursday, July 17, 2025
                 </p>
-                <p className="text-white text-xl md:text-2xl">3:00 PM</p>
+                <p className="text-wedding-primary text-xl md:text-2xl">
+                  3:00 PM
+                </p>
                 <p className="text-white text-xl md:text-2xl">
                   Shercon Resort & Ecology Park
                   <br />
@@ -213,13 +215,12 @@ const Index = () => {
       {/* Wedding Details Section */}
       <section id="details" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
-          <h2 className="section-title">Wedding Details</h2>
+          <h2 className="text-4xl font-bold text-wedding-primary mb-4 text-center">
+            Wedding Details
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             <div className="text-center bg-white p-8 rounded-lg shadow-md">
-              <div className="mx-auto w-16 h-16 bg-wedding-primary rounded-full flex items-center justify-center mb-4">
-                <Church className="w-8 h-8 text-white" />
-              </div>
               <h3 className="text-2xl font-bold mb-4 font-cursive">Ceremony</h3>
               <p className="text-lg mb-2">Thursday, July 17, 2025</p>
               <p className="mb-2">3:00 PM</p>
@@ -234,9 +235,6 @@ const Index = () => {
             </div>
 
             <div className="text-center bg-white p-8 rounded-lg shadow-md">
-              <div className="mx-auto w-16 h-16 bg-wedding-primary rounded-full flex items-center justify-center mb-4">
-                <Wine className="w-8 h-8 text-white" />
-              </div>
               <h3 className="text-2xl font-bold mb-4 font-cursive">
                 Reception
               </h3>
@@ -271,7 +269,9 @@ const Index = () => {
       {/* Venue Section */}
       <section id="venue" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
-          <h2 className="section-title">Venue Location</h2>
+          <h2 className="text-4xl font-bold text-wedding-primary mb-4 text-center">
+            Venue Location
+          </h2>
 
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <iframe
@@ -406,6 +406,9 @@ const Index = () => {
       {/* RSVP Section */}
       <section id="rsvp" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
+          <h1 className="text-5xl font-bold text-wedding-primary mb-4 text-center">
+            RSVP
+          </h1>
           <h2 className="text-3xl font-bold text-wedding-primary mb-4 text-center">
             Event Attendance Confirmation
           </h2>

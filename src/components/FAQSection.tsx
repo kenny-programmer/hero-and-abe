@@ -44,8 +44,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Is there parking available?",
-    answer:
-      "Yes, there is ample parking available at the venue. Valet service will also be provided.",
+    answer: "Yes, there is ample parking available at the venue.",
   },
 ];
 
