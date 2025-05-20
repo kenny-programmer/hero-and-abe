@@ -215,7 +215,7 @@ const Index = () => {
       {/* Wedding Details Section */}
       <section id="details" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
-          <h2 className="text-4xl font-bold text-wedding-primary mb-4 text-center">
+          <h2 className="text-4xl font-bold text-wedding-primary mb-8 text-center">
             Wedding Details
           </h2>
 
@@ -269,7 +269,7 @@ const Index = () => {
       {/* Venue Section */}
       <section id="venue" className="py-20 bg-wedding-secondary">
         <div className="wedding-container">
-          <h2 className="text-4xl font-bold text-wedding-primary mb-4 text-center">
+          <h2 className="text-2xl font-bold mb-4 font-cursive text-center">
             Venue Location
           </h2>
 
