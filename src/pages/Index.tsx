@@ -178,7 +178,7 @@ const Index = () => {
               </h1>
 
               <div className="backdrop-blur-sm bg-wedding-primary/20 rounded-lg p-8 max-w-2xl mx-auto">
-                <p className="text-white text-lg md:text-xl font-light leading-relaxed">
+                <p className="text-white text-lg md:text-xl font-light leading-tight">
                   With praise & thanksgiving to God, and together with their
                   families, you are invited to their wedding celebration.
                 </p>
@@ -190,9 +190,10 @@ const Index = () => {
                   <p className="text-white text-2xl md:text-3xl font-bold">
                     3:00 PM
                   </p>
-                  <p className="text-white text-xl md:text-2xl font-bold">
-                    Shercon Resort & Ecology Park
-                    <br />
+                  <p className="text-white text-2xl md:text-3xl font-bold">
+                    Shercon Resort &amp; Ecology&nbsp;Park
+                  </p>
+                  <p className="text-white text-2xl md:text-3xl font-bold">
                     Mataas Na Kahoy, Batangas
                   </p>
                 </div>
