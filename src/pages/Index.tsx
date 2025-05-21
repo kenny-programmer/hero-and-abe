@@ -190,7 +190,7 @@ const Index = () => {
                   <p className="text-white text-2xl md:text-3xl font-bold">
                     3:00 PM
                   </p>
-                  <p className="text-white text-xl md:text-2xl">
+                  <p className="text-white text-xl md:text-2xl font-bold">
                     Shercon Resort & Ecology Park
                     <br />
                     Mataas Na Kahoy, Batangas
