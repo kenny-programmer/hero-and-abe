@@ -33,11 +33,6 @@ const faqs: FAQItem[] = [
       "Due to venue capacity, we can only accommodate the guests named on your invitation. Please refer to your invitation for details.",
   },
   {
-    question: "Will there be vegetarian/vegan options available?",
-    answer:
-      "Yes, we will have vegetarian and vegan options available. Please indicate your dietary preferences in the RSVP form.",
-  },
-  {
     question: "Is the venue wheelchair accessible?",
     answer:
       "Yes, the venue is wheelchair accessible. If you have any specific accessibility requirements, please let us know in advance.",

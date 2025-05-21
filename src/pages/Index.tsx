@@ -171,29 +171,31 @@ const Index = () => {
         <div className="wedding-container">
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
-              <h1 className="text-6xl md:text-8xl font-bold font-cursive tracking-wide">
+              <h1 className="text-6xl md:text-8xl font-bold font-cursive tracking-wide [text-shadow:_-1px_1px_2px_rgb(255_255_255),_1px_1px_2px_rgb(255_255_255),_1px_-1px_2px_rgb(255_255_255),_-1px_-1px_2px_rgb(255_255_255)]">
                 <span className="text-yellow-500 block md:inline animate-fade-in">
                   Abe & Hero
                 </span>
               </h1>
 
-              <p className="text-white text-lg md:text-xl font-light leading-relaxed">
-                With praise & thanksgiving to God, and together with their
-                families, you are invited to their wedding celebration.
-              </p>
+              <div className="backdrop-blur-sm bg-wedding-primary/20 rounded-lg p-8 max-w-2xl mx-auto">
+                <p className="text-white text-lg md:text-xl font-light leading-relaxed">
+                  With praise & thanksgiving to God, and together with their
+                  families, you are invited to their wedding celebration.
+                </p>
 
-              <div className="space-y-4">
-                <p className="text-wedding-primary text-2xl md:text-3xl font-bold">
-                  Thursday, July 17, 2025
-                </p>
-                <p className="text-wedding-primary text-xl md:text-2xl">
-                  3:00 PM
-                </p>
-                <p className="text-white text-xl md:text-2xl">
-                  Shercon Resort & Ecology Park
-                  <br />
-                  Mataas Na Kahoy, Batangas
-                </p>
+                <div className="space-y-4 mt-6">
+                  <p className="text-white text-2xl md:text-3xl font-bold">
+                    Thursday, July 17, 2025
+                  </p>
+                  <p className="text-white text-2xl md:text-3xl font-bold">
+                    3:00 PM
+                  </p>
+                  <p className="text-white text-xl md:text-2xl">
+                    Shercon Resort & Ecology Park
+                    <br />
+                    Mataas Na Kahoy, Batangas
+                  </p>
+                </div>
               </div>
 
               <div className="mt-12 mb-6">
