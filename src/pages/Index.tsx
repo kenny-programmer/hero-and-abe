@@ -185,17 +185,15 @@ const Index = () => {
 
                 <div className="space-y-4 mt-6">
                   <p className="text-white text-2xl md:text-3xl font-bold">
-                    Thursday, July 17, 2025
-                  </p>
-                  <p className="text-white text-2xl md:text-3xl font-bold">
+                    Thursday, July 17, 2025 <br />
                     3:00 PM
                   </p>
-                  <p className="text-white text-2xl md:text-3xl font-bold">
-                    Shercon Resort &amp; Ecology&nbsp;Park
-                  </p>
-                  <p className="text-white text-2xl md:text-3xl font-bold">
-                    Mataas Na Kahoy, Batangas
-                  </p>
+                  <div className="space-y-4 mt-2">
+                    <p className="text-white text-2xl md:text-3xl font-bold">
+                      Shercon Resort &amp; Ecology&nbsp;Park <br />
+                      Mataas Na Kahoy, Batangas
+                    </p>
+                  </div>
                 </div>
               </div>
 
